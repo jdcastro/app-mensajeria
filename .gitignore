@@ -109,6 +109,11 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+examples
+.examples
+.idea
+.vscode
+config.py
 
 # Spyder project settings
 .spyderproject
