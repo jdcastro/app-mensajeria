@@ -1,5 +1,6 @@
 # plantilla entregada por uninorte, desarrollo grupo 9
-# prueba de la rama1
+# prueba de la rama1 cerrando vs code
+
 
 
 import os
