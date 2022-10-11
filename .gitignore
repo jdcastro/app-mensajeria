@@ -114,7 +114,8 @@ examples
 .idea
 .vscode
 config.py
-
+app/log.txt
+run.sh
 # Spyder project settings
 .spyderproject
 .spyproject
