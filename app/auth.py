@@ -106,7 +106,7 @@ def register():
             
             send_email(credentials, receiver=email, subject='Activate your account', message=content)
             
-            flash('Please check in your registered email to activate your account')
+            flash('Por favor revise su correo electrónico registrado para activar su cuenta')
             return render_template('auth/login.html') 
 
         return render_template('auth/register.html')
@@ -126,23 +126,23 @@ def confirm():
             authid = request.form['authid']
 
             if not authid:
-                flash('Invalid')
+                flash('Invalido')
                 return render_template('auth/forgot.html')
 
             if not password:
-                flash('Password required')
+                flash('Clave requerida')
                 return render_template('auth/change.html', number=authid)
 
             if not password1:
-                flash('Password confirmation required')
+                flash('Confirmación de clave requerida')
                 return render_template('auth/change.html', number=authid)
 
             if password1 != password:
-                flash('Both values should be the same')
+                flash('Ambos valores deben ser iguales')
                 return render_template('auth/change.html', number=authid)
 
             if not utils.isPasswordValid(password):
-                error = 'Password should contain at least a lowercase letter, an uppercase letter and a number with 8 characters long.'
+                error = 'La contraseña debe contener al menos una letra minúscula, una letra mayúscula y un número de 8 caracteres.'
                 flash(error)
                 return render_template('auth/change.html', number=authid)
 
@@ -159,7 +159,7 @@ def confirm():
                 db.commit()
                 return redirect(url_for('auth.login'))
             else:
-                flash('Invalid')
+                flash('Invalido')
                 return render_template('auth/forgot.html')
 
         return render_template('auth/forgot.html')
@@ -228,7 +228,7 @@ def forgot():
                 
                 send_email(credentials, receiver=email, subject='New Password', message=content)
                 
-                flash('Please check in your registered email')
+                flash('Por favor verifique en su correo electrónico registrado')
             else:
                 error = 'Email is not registered'
                 flash(error)            
